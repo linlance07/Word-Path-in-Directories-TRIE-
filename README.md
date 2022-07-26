@@ -1,4 +1,4 @@
-# Word-Path-in-Directories-TRIE
+# Word_Path_System_TRIE
 
 Author: Colin Rolance D (Final Year ECE - PSG iTech)
 
