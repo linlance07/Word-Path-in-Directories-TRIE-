@@ -70,6 +70,7 @@ for root, dirs, files in os.walk(path):
     for dirr in dirs:
         wordsuggestor.insert(dirr.lower(),dirr,f"{root}\{dirr}",1)
     for file in files:
+        wordsuggestor.insert(file.lower(), file, f"{root}\{file}", 1)
         if file.endswith(".txt"):
             file_path = f"{root}\{file}"
             array[file] = (read_text_file(file_path),file_path)
@@ -106,8 +107,11 @@ else:
         print(res[1])
 print()
 print("***** FILE SEARCH *****")
-for file in search_file:
-    print(">> {} --> {}".format(file[0],file[1]))
+if not search_file:
+    print("Sorry there is no such file with that name, Try Again!")
+else:
+    for file in search_file:
+        print(">> {} --> {}".format(file[0],file[1]))
 print()
 print("*******************************************************************")
 
